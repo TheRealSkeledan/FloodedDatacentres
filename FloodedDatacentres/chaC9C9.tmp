@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf127jakrqiop"]
+
+[ext_resource type="Texture2D" uid="uid://c0vqq4rpefq2l" path="res://characters/guyNormSprites.png" id="1_aiwx7"]
+[ext_resource type="Texture2D" uid="uid://di7tndt8xn2a1" path="res://characters/melodyNormSprites.png" id="2_8jj5f"]
+[ext_resource type="Script" path="res://Guy.gd" id="2_fixpf"]
+[ext_resource type="Texture2D" uid="uid://c8jmei1adeyil" path="res://icons/guyIcon.png" id="2_nc0hc"]
+[ext_resource type="Texture2D" uid="uid://beh1r6thbkvv2" path="res://icons/melodyIcon.png" id="4_sq5f4"]
+
+[node name="World" type="Node2D"]
+texture_filter = 1
+
+[node name="Guy" type="Sprite2D" parent="."]
+texture = ExtResource("1_aiwx7")
+hframes = 5
+vframes = 6
+script = ExtResource("2_fixpf")
+
+[node name="Melody" type="Sprite2D" parent="."]
+position = Vector2(-31, -4)
+texture = ExtResource("2_8jj5f")
+hframes = 5
+vframes = 6
+frame = 10
+
+[node name="guyIcon" type="Sprite2D" parent="."]
+texture_filter = 6
+position = Vector2(-141, -46)
+scale = Vector2(0.104545, 0.108182)
+texture = ExtResource("2_nc0hc")
+hframes = 2
+
+[node name="melodyIcon" type="Sprite2D" parent="."]
+texture_filter = 6
+position = Vector2(-114, -45)
+scale = Vector2(0.111234, 0.108612)
+texture = ExtResource("4_sq5f4")
+hframes = 2
