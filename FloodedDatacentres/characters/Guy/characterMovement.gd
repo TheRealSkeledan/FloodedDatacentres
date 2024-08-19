@@ -5,6 +5,7 @@ const SPEED = 60.0
 const JUMP_VELOCITY = -200.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var handheldAnimation: AnimationPlayer = $handheldAnimation
 
 
 func _physics_process(delta: float) -> void:
@@ -26,12 +27,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, 15)
 		if abs(velocity.x) < 5:
 			sprite.play("idli")
+			handheldAnimation.play("idli")
 	else:
 		if Input.is_action_pressed("shift"):
 			sprite.play("walk", 2)
 			velocity.x = direction * SPEED * 2
 		else:
 			sprite.play("walk", 1)
+			handheldAnimation.play("walk")
 			velocity.x = direction * SPEED
 
 	move_and_slide()

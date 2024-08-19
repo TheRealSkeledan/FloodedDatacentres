@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 60.0
 const JUMP_VELOCITY = -200.0
 
-@onready var sprite: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _physics_process(delta: float) -> void:
