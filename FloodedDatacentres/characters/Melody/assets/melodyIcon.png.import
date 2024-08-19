@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di7tndt8xn2a1"
-path="res://.godot/imported/melodyNormSprites.png-390a17ef6c14d092ac27dd738aa02059.ctex"
+uid="uid://cc278s2y70ws"
+path="res://.godot/imported/melodyIcon.png-ffe0d40a9f85550acd3879870948ae32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/melodyNormSprites.png"
-dest_files=["res://.godot/imported/melodyNormSprites.png-390a17ef6c14d092ac27dd738aa02059.ctex"]
+source_file="res://characters/Melody/assets/melodyIcon.png"
+dest_files=["res://.godot/imported/melodyIcon.png-ffe0d40a9f85550acd3879870948ae32.ctex"]
 
 [params]
 

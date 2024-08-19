@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb726gfn2m54i"]
+
+[ext_resource type="PackedScene" uid="uid://orfe6j5r76y6" path="res://characters/Guy/guy.tscn" id="1_batde"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rp5r8"]
+distance = -198.0
+
+[node name="test" type="Node2D"]
+
+[node name="Guy" parent="." instance=ExtResource("1_batde")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_rp5r8")

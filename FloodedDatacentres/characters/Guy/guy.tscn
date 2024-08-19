@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://orfe6j5r76y6"]
+
+[ext_resource type="Script" path="res://characters/Guy/characterMovement.gd" id="1_t1w46"]
+[ext_resource type="Texture2D" uid="uid://xx7lni8ip76g" path="res://characters/Guy/assets/GuyWIP.png" id="2_prfvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5y11"]
+size = Vector2(13, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgk6d"]
+atlas = ExtResource("2_prfvs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eie0h"]
+atlas = ExtResource("2_prfvs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a31um"]
+atlas = ExtResource("2_prfvs")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbwoe"]
+atlas = ExtResource("2_prfvs")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5m70"]
+atlas = ExtResource("2_prfvs")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w6ba"]
+atlas = ExtResource("2_prfvs")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ds2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgk6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eie0h")
+}],
+"loop": true,
+"name": &"idli",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a31um")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbwoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5m70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w6ba")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Guy" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_t1w46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_d5y11")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_2ds2f")
+animation = &"walk"

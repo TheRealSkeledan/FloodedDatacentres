@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0vqq4rpefq2l"
-path="res://.godot/imported/guyNormSprites.png-6cb18a0bba6665bf91b745ebcdf9fcb4.ctex"
+uid="uid://bunq7x7717m5r"
+path="res://.godot/imported/guyNormSprites.png-01912c095cbe7b77939934026b606070.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/guyNormSprites.png"
-dest_files=["res://.godot/imported/guyNormSprites.png-6cb18a0bba6665bf91b745ebcdf9fcb4.ctex"]
+source_file="res://characters/Guy/assets/guyNormSprites.png"
+dest_files=["res://.godot/imported/guyNormSprites.png-01912c095cbe7b77939934026b606070.ctex"]
 
 [params]
 

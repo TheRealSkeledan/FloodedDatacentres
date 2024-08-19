@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beh1r6thbkvv2"
-path="res://.godot/imported/melodyIcon.png-cd8bb18e2a7843ba59fea64fafad6a3b.ctex"
+uid="uid://cdjvw77a7kjkj"
+path="res://.godot/imported/guyIcon.png-efb95791150d34d203b477dab8dfa30d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/melodyIcon.png"
-dest_files=["res://.godot/imported/melodyIcon.png-cd8bb18e2a7843ba59fea64fafad6a3b.ctex"]
+source_file="res://characters/Guy/assets/guyIcon.png"
+dest_files=["res://.godot/imported/guyIcon.png-efb95791150d34d203b477dab8dfa30d.ctex"]
 
 [params]
 
