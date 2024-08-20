@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://c252lq36ou22u"]
+
+[ext_resource type="Script" path="res://nodes/door/door.gd" id="1_gppj4"]
+
+[sub_resource type="GDScript" id="GDScript_hp1d6"]
+script/source = "extends Area2D
+
+var bodies: Array = []
+
+@onready var Door: Node2D = $\"..\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	for body in bodies:
+		if body.get_parent().interacting:
+			Door.get
+			#print(resource.connection)
+			#body.get_parent().global_position = get_node(resource.connection).global_position
+	
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		bodies.append(body)
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		bodies.erase(body)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhjbi"]
+size = Vector2(31, 56)
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_gppj4")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_hp1d6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(6.5, 18)
+shape = SubResource("RectangleShape2D_jhjbi")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

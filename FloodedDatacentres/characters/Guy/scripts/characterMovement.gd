@@ -17,10 +17,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-
 	var direction := Input.get_axis("left", "right")
 	
-
 	if direction == 0:
 		velocity.x = move_toward(velocity.x, 0, 15)
 		if abs(velocity.x) < 5:
@@ -49,5 +47,5 @@ func _physics_process(delta: float) -> void:
 			spriteAnimation.play("walk", 0, 1)
 			handheldAnimation.play("left", 0, 1)
 			velocity.x = direction * SPEED
-
 	move_and_slide()
+	

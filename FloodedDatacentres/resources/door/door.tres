@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="door" load_steps=2 format=3 uid="uid://oeqoxr2wd3oy"]
+
+[ext_resource type="Script" path="res://resources/door/door.gd" id="1_s1qja"]
+
+[resource]
+script = ExtResource("1_s1qja")
+connection = NodePath("Area2D")
+explodeChance = 0.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://orfe6j5r76y6"]
+[gd_scene load_steps=23 format=3 uid="uid://orfe6j5r76y6"]
 
-[ext_resource type="Script" path="res://characters/Guy/characterMovement.gd" id="1_t1w46"]
+[ext_resource type="Script" path="res://characters/Guy/guy.gd" id="1_qi2st"]
+[ext_resource type="Script" path="res://characters/Guy/scripts/characterMovement.gd" id="1_t1w46"]
 [ext_resource type="Texture2D" uid="uid://xx7lni8ip76g" path="res://characters/Guy/assets/GuyWIP.png" id="2_prfvs"]
 [ext_resource type="Texture2D" uid="uid://c3umugoi6pup2" path="res://items/test2l.png" id="3_oix1v"]
 
@@ -308,6 +309,7 @@ _data = {
 
 [node name="Guy" type="Node2D"]
 scale = Vector2(1.5, 1.5)
+script = ExtResource("1_qi2st")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_t1w46")
@@ -337,6 +339,4 @@ libraries = {
 "": SubResource("AnimationLibrary_sxkj7")
 }
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
+[node name="Camera2D" type="Camera2D" parent="."]
