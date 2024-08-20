@@ -309,6 +309,7 @@ _data = {
 [node name="Guy" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_t1w46")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
