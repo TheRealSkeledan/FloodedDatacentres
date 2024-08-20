@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://orfe6j5r76y6"]
+[gd_scene load_steps=20 format=3 uid="uid://orfe6j5r76y6"]
 
 [ext_resource type="Script" path="res://characters/Guy/characterMovement.gd" id="1_t1w46"]
 [ext_resource type="Texture2D" uid="uid://xx7lni8ip76g" path="res://characters/Guy/assets/GuyWIP.png" id="2_prfvs"]
@@ -62,6 +62,98 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_h8qrd"]
+resource_name = "idli"
+length = 0.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idli"]
+}
+
+[sub_resource type="Animation" id="Animation_dxhpf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idli"]
+}
+
+[sub_resource type="Animation" id="Animation_iy833"]
+resource_name = "walk"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"walk", &"walk", &"walk", &"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uof30"]
+_data = {
+"RESET": SubResource("Animation_dxhpf"),
+"idli": SubResource("Animation_h8qrd"),
+"walk": SubResource("Animation_iy833")
+}
+
 [sub_resource type="Animation" id="Animation_lnicb"]
 length = 0.001
 tracks/0/type = "value"
@@ -87,35 +179,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.785398]
-}
-
-[sub_resource type="Animation" id="Animation_t6v7c"]
-resource_name = "walk"
-length = 0.4
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("handheld:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(1, 8), Vector2(3, 2)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("handheld:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0.785398, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_x2x82"]
@@ -147,6 +210,35 @@ tracks/1/keys = {
 "values": [0.0, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_t6v7c"]
+resource_name = "walk"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("handheld:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(1, 8), Vector2(3, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("handheld:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.785398, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sxkj7"]
 _data = {
 "RESET": SubResource("Animation_lnicb"),
@@ -167,6 +259,11 @@ shape = SubResource("RectangleShape2D_d5y11")
 sprite_frames = SubResource("SpriteFrames_2ds2f")
 animation = &"idli"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_uof30")
+}
+
 [node name="handheld" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(1, 3)
 rotation = 0.785398
@@ -176,3 +273,7 @@ texture = ExtResource("3_x2c03")
 libraries = {
 "": SubResource("AnimationLibrary_sxkj7")
 }
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
