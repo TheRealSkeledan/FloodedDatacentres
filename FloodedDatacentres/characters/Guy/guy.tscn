@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://characters/Guy/characterMovement.gd" id="1_t1w46"]
 [ext_resource type="Texture2D" uid="uid://xx7lni8ip76g" path="res://characters/Guy/assets/GuyWIP.png" id="2_prfvs"]
-[ext_resource type="Texture2D" uid="uid://cxg1cj5b48tb4" path="res://items/test.png" id="3_x2c03"]
+[ext_resource type="Texture2D" uid="uid://c3umugoi6pup2" path="res://items/test2l.png" id="3_oix1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5y11"]
 size = Vector2(13, 27)
@@ -309,7 +309,6 @@ _data = {
 [node name="Guy" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_t1w46")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -329,7 +328,7 @@ libraries = {
 [node name="handheld" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(1, 3)
 rotation = 0.785398
-texture = ExtResource("3_x2c03")
+texture = ExtResource("3_oix1v")
 
 [node name="handheldAnimation" type="AnimationPlayer" parent="CharacterBody2D/handheld"]
 root_node = NodePath("../..")
