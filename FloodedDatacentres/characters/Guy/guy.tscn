@@ -307,6 +307,7 @@ _data = {
 }
 
 [node name="Guy" type="Node2D"]
+scale = Vector2(1.5, 1.5)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_t1w46")
