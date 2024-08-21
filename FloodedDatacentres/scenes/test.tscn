@@ -91,7 +91,8 @@ tile_set = SubResource("TileSet_30wib")
 position = Vector2(1365, -23)
 
 [node name="Area2D" type="Area2D" parent="room2"]
+rotation = -0.0264049
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room2/Area2D"]
-position = Vector2(1374, -23)
+position = Vector2(1439.14, -24.0125)
 shape = SubResource("CircleShape2D_8aeyt")
