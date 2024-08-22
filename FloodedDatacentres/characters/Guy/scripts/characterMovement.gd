@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -200.0
 @onready var spriteAnimation: AnimationPlayer = $AnimatedSprite2D/AnimationPlayer
 @onready var handheldAnimation: AnimationPlayer = $handheld/handheldAnimation
 @onready var handheld: Sprite2D = $handheld
+@onready var guy: Node2D = $".."
+@onready var characterBody: CharacterBody2D = $"."
 
 
 func _physics_process(delta: float) -> void:

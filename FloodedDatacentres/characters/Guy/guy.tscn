@@ -339,4 +339,4 @@ libraries = {
 "": SubResource("AnimationLibrary_sxkj7")
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

