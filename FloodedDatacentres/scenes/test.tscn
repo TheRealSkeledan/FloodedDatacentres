@@ -58,7 +58,7 @@ sources/0 = SubResource("TileSetAtlasSource_j3si3")
 
 [sub_resource type="Resource" id="Resource_aqxkl"]
 script = ExtResource("4_fceer")
-connection = NodePath("../../room2/point")
+connection = NodePath("../../room2/door")
 explodeChance = 0.0
 
 [node name="test" type="Node2D"]
@@ -84,7 +84,4 @@ tile_map_data = PackedByteArray("AAD3/wIAAAAAAAAAAAD4/wIAAAABAAAAAAD5/wIAAAAAAAA
 tile_set = SubResource("TileSet_30wib")
 
 [node name="door" parent="room2" instance=ExtResource("3_8ej4v")]
-position = Vector2(1365, -23)
-
-[node name="point" type="Node2D" parent="room2"]
-position = Vector2(1429, -231)
+position = Vector2(1375, -23)
