@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Person" load_steps=2 format=3 uid="uid://b81spund17uy4"]
+
+[ext_resource type="Script" path="res://resources/person/person.gd" id="1_stv5v"]
+
+[resource]
+script = ExtResource("1_stv5v")
+name = ""
+health = 0.0
+speed = 0.0
+strength = 0.0
+jump = 0.0

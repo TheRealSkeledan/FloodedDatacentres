@@ -31,21 +31,21 @@ func _physics_process(delta: float) -> void:
 	elif direction > 0:
 		sprite.flip_h = false
 		if Input.is_action_pressed("shift"):
-			spriteAnimation.play("walk", 0, 2)
+			spriteAnimation.play("walkH", 0, 2)
 			handheldAnimation.play("right", 0, 2)
 			velocity.x = direction * SPEED * 2
 		else:
-			spriteAnimation.play("walk", 0, 1)
+			spriteAnimation.play("walkH", 0, 1)
 			handheldAnimation.play("right", 0, 1)
 			velocity.x = direction * SPEED
 	else:
 		sprite.flip_h = true
 		if Input.is_action_pressed("shift"):
-			spriteAnimation.play("walk", 0, 2)
+			spriteAnimation.play("walkH", 0, 2)
 			handheldAnimation.play("left", 0, 2)
 			velocity.x = direction * SPEED * 2
 		else:
-			spriteAnimation.play("walk", 0, 1)
+			spriteAnimation.play("walkH", 0, 1)
 			handheldAnimation.play("left", 0, 1)
 			velocity.x = direction * SPEED
 	move_and_slide()
