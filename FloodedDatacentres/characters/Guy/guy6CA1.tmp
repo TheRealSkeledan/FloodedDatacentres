@@ -1,0 +1,426 @@
+[gd_scene load_steps=34 format=3 uid="uid://orfe6j5r76y6"]
+
+[ext_resource type="Script" path="res://characters/Guy/guy.gd" id="1_qi2st"]
+[ext_resource type="Script" path="res://characters/Guy/scripts/characterMovement.gd" id="1_t1w46"]
+[ext_resource type="Script" path="res://resources/person/person.gd" id="2_17le5"]
+[ext_resource type="Texture2D" uid="uid://bpqnh85mgev2x" path="res://characters/Guy/assets/Guy.png" id="3_nuyat"]
+[ext_resource type="Texture2D" uid="uid://c3umugoi6pup2" path="res://items/test2l.png" id="3_oix1v"]
+
+[sub_resource type="Resource" id="Resource_lx6ey"]
+script = ExtResource("2_17le5")
+name = "Guy"
+health = 100.0
+speed = 30.0
+strength = 50.0
+jump = 20.0
+room = NodePath("CharacterBody2D/handheld")
+verticalWalk = false
+interacting = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5y11"]
+size = Vector2(13, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce447"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gmyq"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwd1n"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvesd"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxi73"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81vfl"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rw80"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbkpy"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdnhl"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0b0j"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5wqb"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x1dk"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s625k"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhbjt"]
+atlas = ExtResource("3_nuyat")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ds2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce447")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gmyq")
+}],
+"loop": true,
+"name": &"idli",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwd1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvesd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxi73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81vfl")
+}],
+"loop": true,
+"name": &"walkD",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rw80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbkpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdnhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0b0j")
+}],
+"loop": true,
+"name": &"walkH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5wqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x1dk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s625k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhbjt")
+}],
+"loop": true,
+"name": &"walkU",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_dxhpf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idli"]
+}
+
+[sub_resource type="Animation" id="Animation_h8qrd"]
+resource_name = "idli"
+length = 0.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idli"]
+}
+
+[sub_resource type="Animation" id="Animation_iy833"]
+resource_name = "walkH"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"walkH", &"walkH", &"walkH", &"walkH"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_podhx"]
+resource_name = "walkU"
+step = 0.2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uof30"]
+_data = {
+"RESET": SubResource("Animation_dxhpf"),
+"idli": SubResource("Animation_h8qrd"),
+"walkH": SubResource("Animation_iy833"),
+"walkU": SubResource("Animation_podhx")
+}
+
+[sub_resource type="Animation" id="Animation_lnicb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("handheld:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("handheld:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.785398]
+}
+
+[sub_resource type="Animation" id="Animation_k3dnt"]
+resource_name = "idliLeft"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("handheld:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-12, 7), Vector2(-12, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("handheld:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3.14159, 3.14159]
+}
+
+[sub_resource type="Animation" id="Animation_x2x82"]
+resource_name = "idliRight"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("handheld:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1e-05, 1e-05),
+"update": 1,
+"values": [Vector2(3, 2), Vector2(3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("handheld:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1e-05, 1e-05),
+"update": 1,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vtf8t"]
+resource_name = "left"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("handheld:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-11, -5), Vector2(-11, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("handheld:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1.5708, 3.14159]
+}
+
+[sub_resource type="Animation" id="Animation_t6v7c"]
+resource_name = "right"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("handheld:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(1, 8), Vector2(3, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("handheld:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.785398, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sxkj7"]
+_data = {
+"RESET": SubResource("Animation_lnicb"),
+"idliLeft": SubResource("Animation_k3dnt"),
+"idliRight": SubResource("Animation_x2x82"),
+"left": SubResource("Animation_vtf8t"),
+"right": SubResource("Animation_t6v7c")
+}
+
+[node name="Guy" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_qi2st")
+resource = SubResource("Resource_lx6ey")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_t1w46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_d5y11")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_2ds2f")
+animation = &"idli"
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_uof30")
+}
+
+[node name="handheld" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(1, 3)
+rotation = 0.785398
+texture = ExtResource("3_oix1v")
+
+[node name="handheldAnimation" type="AnimationPlayer" parent="CharacterBody2D/handheld"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_sxkj7")
+}
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
