@@ -9,6 +9,7 @@ var connection: Node
 func _ready() -> void:
 	connection = get_node(resource.connection)
 	
+	
 func setVWalk(person: Node) -> void:
 	#var room: Node = connection.get_parent()
 	#person.room = room;
